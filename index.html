@@ -1,0 +1,81 @@
+---
+layout: default
+class: home
+comments: false
+---
+
+<!-- /.banner -->
+<section class="container content">
+    <div class="columns">
+        <div class="column two-thirds" >
+            <ol class="repo-list">
+                {% for post in paginator.posts %}
+                <li class="repo-list-item">
+                    <h3 class="repo-list-name">
+                      <a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+                    </h3>
+                    <a href="{{ site.url }}{{ post.url }}">
+                    <p class="repo-list-description">
+                        {{ post.excerpt }}
+                    </p></a>
+                    <p class="repo-list-meta">
+                        <span class="meta-info">
+                          <span class="octicon octicon-person"></span> {% if post.author %}{{ post.author }}{% else %}{{ site.default_author }}{% endif %}
+                        </span>
+                        {% if post.lastUpdate %}
+                        <span class="meta-info">
+                          <span class="octicon octicon-pencil"></span> {{ post.lastUpdate | date: "%Y/%m/%d" }}
+                        </span>
+                        {% else %}
+                        {% if post.date %}
+                        <span class="meta-info">
+                          <span class="octicon octicon-calendar"></span> {{ post.date | date: "%Y/%m/%d" }}
+                        </span>
+                        {% endif %}
+                        {% endif %}
+                        <a href="{{ site.url }}{{ post.url }}"><span class="tags tags-black">
+                            <span class="tag">View All</span>
+                        </span></a>
+                    </p>
+                </li>
+                {% endfor %}
+            </ol>
+        </div>
+        <div class="column one-third">
+            {% include sidebar-search.html %}
+            {% include sidebar-popular-repo.html %}
+        </div>
+    </div>
+    <div class="pagination text-align">
+      <div class="btn-group">
+        {% if paginator.previous_page %}
+          {% if paginator.previous_page == 1 %}
+              <a href="{{ site.url }}/" class="btn btn-outline">&laquo;</a>
+          {% else %}
+              <a href="{{ site.url }}/page{{paginator.previous_page}}"  class="btn btn-outline">&laquo;</a>
+          {% endif %}
+        {% else %}
+            <button disabled="disabled" href="javascript:;" class="btn btn-outline">&laquo;</button>
+        {% endif %}
+        {% if paginator.page == 1 %}
+            <a href="javascript:;" class="active btn btn-outline">1</a>
+        {% else %}
+            <a href="{{ site.url }}/"  class="btn btn-outline">1</a>
+        {% endif %}
+        {% for count in (2..paginator.total_pages) %}
+          {% if count == paginator.page %}
+              <a href="javascript:;"  class="active btn btn-outline">{{count}}</a>
+          {% else %}
+              <a href="{{ site.url }}/page{{count}}"  class="btn btn-outline">{{count}}</a>
+          {% endif %}
+        {% endfor %}
+        {% if paginator.next_page %}
+            <a href="{{ site.url }}/page{{paginator.next_page}}"  class="btn btn-outline">&raquo;</a>
+        {% else %}
+            <button disabled="disabled" href="javascript:;" class="btn btn-outline">&raquo;</button>
+        {% endif %}
+        </div>
+    </div>
+    <!-- /pagination -->
+</section>
+<!-- /section.content -->

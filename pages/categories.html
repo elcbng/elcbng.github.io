@@ -1,0 +1,105 @@
+---
+layout: page
+title: 归档
+description: 按年份归档
+keywords: 归档
+comments: false
+menu: 归档
+permalink: /categories/
+---
+
+
+            <!-- Tags (as filter) -->
+            <div id='tag_cloud' class="tags tags-sup js-tags">
+                <a class="tag-button--all" data-encode="">
+                    Show All
+                    <sup>{{site.posts.size}}</sup>
+                </a>
+
+                {% capture tags %}
+                {% for tag in site.tags %}
+                <a data-sort="{{ site.posts.size | minus: tag[1].size | prepend: '0000' | slice: -4, 4 }}"
+                    data-encode="{{ tag[0] | strip | url_encode }}"
+                    class="tag-button"
+                      title="{{ tag[0] }}"
+                     rel="{{ tag[1].size }}">
+                    {{ tag[0] }}
+                    <sup>{{tag[1].size}}</sup>
+                </a>
+                {% endfor %}
+                {% endcapture %}
+                {{ tags | split:'</a>' | sort | join:'</a>' }}
+            </div>
+
+      <!-- Tag Detail -->
+      <div class="tagDetails">
+          {% for tagDetail in site.data.tagdetails.tagDetails %}
+          <div class="d-none tagDetail" data-tag="{{ tagDetail.name | strip | url_encode }}">{{ tagDetail.content }}</div>
+          {% endfor %}
+      </div>
+
+      <!-- Article List -->
+            <div class="mini-post-list js-result d-none">
+            {%- assign _sorted_list = site.posts -%}
+            {%- assign _sorted_list = _sorted_list | sort: 'date' -%}
+            {%- assign _sorted_list = _sorted_list | reverse -%}
+
+
+            {%- for _article in _sorted_list -%}
+                {%- assign _tags = '' -%}
+                {%- for _tag in _article.tags -%}
+                    {%- assign _tag_encode = _tag | strip | url_encode -%}
+                    {%- if forloop.last -%}
+                        {%- assign _tags = _tags | append: _tag_encode -%}
+                    {%- else -%}
+                        {%- assign _tags = _tags | append: _tag_encode | append: ',' -%}
+                    {%- endif -%}
+                {%- endfor -%}
+
+            {% comment %} group by year {% endcomment %}
+            {%- assign _currentdate = _article.date | date: '%Y' -%}
+            {%- if _currentdate != _date -%}
+                {%- unless forloop.first -%}</section>{%- endunless -%}
+                <section>
+                <span class="fa listing-seperator">
+                    <span class="tag-text">{{ _currentdate }}</span>
+                </span>
+                {%- assign _date = _currentdate -%}
+            {%- endif -%}
+
+                <div class="post-preview item" data-tags="{{ _tags }}">
+                    <a href="{{ _article.url | prepend: site.baseurl }}">
+                        <h2 class="post-title">
+                            {% if _article.copyright %}「转载」{% endif %}
+                            {% if _article.exterUrl %}「外链」{% endif %}
+                            {{ _article.title }}
+                        </h2>
+                        {% if _article.subtitle %}
+                        <h3 class="post-subtitle">
+                            {{ _article.subtitle }}
+                        </h3>
+                        {% endif %}
+            </a>
+            <p class="post-meta">POST ON {{ _article.date | date:"%Y-%m-%d" }}</p>
+                </div>
+            {% endfor %}
+
+<!-- jquery.tagcloud.js -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+  async('{{ site.url }}/assets/js/jquery.tagCloud.js',function(){
+      $.fn.tagcloud.defaults = {
+          //size: {start: 1, end: 1, unit: 'em'},
+          color: {start: '#bbbbee', end: '#2f93b4'},
+      };
+      $('#tag_cloud a').tagcloud();
+  })
+</script>
+<script src="{{ site.url }}/assets/js/archive.js"></script>
