@@ -22,16 +22,14 @@ comments: false
                         <span class="meta-info">
                           <span class="octicon octicon-person"></span> {% if post.author %}{{ post.author }}{% else %}{{ site.default_author }}{% endif %}
                         </span>
-                        {% if post.lastUpdate %}
+                        {% if post.lastUpdate > post.date %}
                         <span class="meta-info">
                           <span class="octicon octicon-pencil"></span> {{ post.lastUpdate | date: "%Y/%m/%d" }}
                         </span>
                         {% else %}
-                        {% if post.date %}
                         <span class="meta-info">
                           <span class="octicon octicon-calendar"></span> {{ post.date | date: "%Y/%m/%d" }}
                         </span>
-                        {% endif %}
                         {% endif %}
                         <a href="{{ site.url }}{{ post.url }}"><span class="tags tags-black">
                             <span class="tag">View All</span>
