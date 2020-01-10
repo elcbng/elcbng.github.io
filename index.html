@@ -22,7 +22,9 @@ comments: false
                         <span class="meta-info">
                           <span class="octicon octicon-person"></span> {% if post.author %}{{ post.author }}{% else %}{{ site.default_author }}{% endif %}
                         </span>
-                        {% if post.lastUpdate > post.date %}
+                        {% assign date = post.date | date: "%Y/%m/%d" %}
+                        {% assign lastUpdate = post.lastUpdate | date: "%Y/%m/%d" %}
+                        {% if post.lastUpdate and lastUpdate != date %}
                         <span class="meta-info">
                           <span class="octicon octicon-pencil"></span> {{ post.lastUpdate | date: "%Y/%m/%d" }}
                         </span>
