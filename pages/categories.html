@@ -71,7 +71,6 @@ permalink: /categories/
                     <a href="{{ _article.url | prepend: site.baseurl }}">
                         <h2 class="post-title">
                             {% if _article.copyright %}「转载」{% endif %}
-                            {% if _article.exterUrl %}「外链」{% endif %}
                             {{ _article.title }}
                         </h2>
                         {% if _article.subtitle %}
@@ -80,7 +79,7 @@ permalink: /categories/
                         </h3>
                         {% endif %}
             </a>
-            <p class="post-meta">POST ON {{ _article.date | date:"%Y-%m-%d" }}</p>
+            <p class="post-meta">{{ _article.author }} POST ON {{ _article.date | date:"%Y-%m-%d" }}</p>
                 </div>
             {% endfor %}
 

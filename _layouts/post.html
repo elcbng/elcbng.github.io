@@ -7,6 +7,9 @@ layout: default
     <div class="column three-fourths">
       <div class="collection-title">
         <h1 class="collection-header">{{ page.title }}</h1>
+        {% if page.subtitle %}
+        <h1 class="collection-header">{{ page.subtitle }}</h1>
+        {% endif %}
         <div class="collection-info">
           <div class="tags">
             <span class="octicon octicon-tag"></span>
