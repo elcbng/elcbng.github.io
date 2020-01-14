@@ -1,18 +1,13 @@
 ---
 layout: post
-title: 网络组开课之安全知识1
+title: 一些简单的网络安全知识
 tags: [Websecrity]
 author: 404player
 ---
 
-# 一些简单的网络安全知识
-
-
-
-
-<img src="https://bkimg.cdn.bcebos.com/pic/8644ebf81a4c510f35128e696859252dd52aa5eb@wm_1," alt="404player" style="zoom:25%;" align='left' />
-
 *web安全是一个博大精深的问题，涉及的知识面很广，这节课的主要目的主要还是简略地介绍一下在网站开发中常见web漏洞的原理和一些简单的防御方式。大家压力不要太大，太深的知识不需要大家掌握，当然有兴趣可以自行学习~~~*
+
+
 
 ### 什么是web？
 
