@@ -3,7 +3,7 @@ layout: post
 title: xss漏洞详解1
 tags: [crosssite]
 lastUpdate: 2020-01-17
-author:404player
+author: 404player
 ---      
   
 
