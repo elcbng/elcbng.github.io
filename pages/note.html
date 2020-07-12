@@ -1,0 +1,55 @@
+---
+layout: page
+title: Note
+description:
+keywords:
+comments: false
+menu: 笔记
+permalink: /note/
+---
+
+{% assign _sorted_note = site.note | sort: 'path' %}
+
+{%- for _article in _sorted_note -%}
+
+{% comment %} group by path {% endcomment %}
+{%- assign _current = _article.category -%}
+{%- if _current != _past -%}
+{%- unless forloop.first -%}</section>{%- endunless -%}
+<section>
+<span class="fa listing-seperator">
+    <span>{{ _current }}</span>
+</span>
+{%- assign _past = _current -%}
+{%- endif -%}
+
+{% if _article.title == "Tutorial" %}
+<div>{{ _article.excerpt }}                        
+<a href="{{ site.url }}{{ post.url }}"><span class="tags tags-black">
+    <span class="tag">View All</span>
+</span></a>
+</div>
+{% else %}
+<div class="post-preview item">
+    <a href="{{ _article.url | prepend: site.baseurl }}">
+        <span class="post-title">
+            {{ _article.title }}
+        </span>
+        {% if _article.subtitle %}
+        <span class="post-subtitle">
+            - {{ _article.subtitle }}
+        </span>
+        {% endif %}
+    </a>
+    <span>{{ _article.author }} POST ON {{ _article.date | date:"%Y-%m-%d" }}</span>
+</div>
+{% endif %}
+{% endfor %}
+
+<style>
+    .post-preview{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+</style>

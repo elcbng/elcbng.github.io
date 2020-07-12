@@ -34,6 +34,9 @@ navs:
     href: /wiki/
     label: 维基
   -
+    href: /note/
+    label: 笔记
+  -
     href: /about/
     label: 关于
   -
@@ -69,6 +72,9 @@ collections:
     wiki:
         output: true
         permalink: /wiki/:path/
+    note:
+        output: true
+        permalink: /note/:path/
 
 repository: elcbng/elcbng.github.io
 
