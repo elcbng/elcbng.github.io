@@ -25,7 +25,7 @@ permalink: /note/
 
 {% if _article.title == "Tutorial" %}
 <div>{{ _article.excerpt }}                        
-<a href="{{ site.url }}{{ post.url }}"><span class="tags tags-black">
+<a href="{{ _article.url | prepend: site.baseurl }}"><span class="tags tags-black">
     <span class="tag">View All</span>
 </span></a>
 </div>
