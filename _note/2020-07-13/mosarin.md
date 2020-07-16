@@ -1,6 +1,6 @@
 ---
 layout: note
-title: Tutorial
+title: 第一周学习笔记
 author: MuZhou233
 category: 2020暑假第一周
 date: 2020-07-12
