@@ -1,9 +1,9 @@
 ---
 layout: note
-title: Week 1 Notes by Ankh
+title: Week 1 Notes(on data stucture and others) by Ankh
 author: AnkhZhai
 category: 2020暑假第一周
-date: 2020-07-12
+date: 2020-07-19
 ---
 
 ## PART 1.   数据结构与算法入门
