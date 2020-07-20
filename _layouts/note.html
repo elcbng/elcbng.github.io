@@ -6,7 +6,30 @@ layout: default
   <div class="columns">
     <div class="column three-fourths">
       <div class="collection-title">
-        <h1 class="collection-header">{{ page.title }}</h1>
+        <h1 class="collection-header">
+          {% if page.title == "Tutorial" %}
+            {{ page.category }}{% else %}{{ page.title }}
+          {% endif %}</h1>
+        <div class="collection-info">
+          {% if page.title != "Tutorial" %}
+          <span class="meta-info">
+            <span class="octicon octicon-tag"></span> {{ page.category }}
+          </span>
+          {% endif %}
+          <span class="meta-info">
+            <span class="octicon octicon-person"></span> {% if page.author %}{{ page.author }}{% else %}{{ site.default_author }}{% endif %}
+          </span>
+          {% if page.date %}
+          <span class="meta-info">
+            <span class="octicon octicon-calendar"></span> {{ page.date | date: "%Y/%m/%d" }}
+          </span>
+          {% endif %}
+          {% if page.lastUpdate %}
+          <span class="meta-info">
+            <span class="octicon octicon-pencil"></span> {{ page.lastUpdate | date: "%Y/%m/%d" }}
+          </span>
+          {% endif %}
+        </div>
       </div>
     </div>
   </div>
