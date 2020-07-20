@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1"
+        />
+        <title>
+          示例页面
+        </title>
+    </head>
+    <body>
+        <a href="javascript:;" >点击这里返回</a>
+    </body>
+    <script type="text/javascript">
+        window.onload = function (){
+            var e = document.getElementsByTagName('a')[0]
+            e.addEventListener("click",function(){
+                window.history.go(-1);
+            })
+        }
+    </script>
+    <style type="text/css" rel="stylesheet">
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        body{
+            background: #000;
+        }
+        a{
+            text-decoration: none;
+            position: absolute;
+            left: 50%;
+            top:50%;
+            transform: translate(-50%,-50%);
+            font-size: 30px;
+            line-height: 100px;
+            background: linear-gradient(90deg,#03a9f4,#f441a5,#ffeb3b,#03a9f3);
+            background-size: 400%;
+            width: 400px;
+            height: 100px;
+            color: #ffffff;
+            text-align: center;
+            border-radius:50px ;
+            z-index: 1;
+        }
+        a::before{
+            content: "";
+            position: absolute;
+            left: -5px;
+            right: -5px;
+            top: -5px;
+            bottom: -5px;
+            background: linear-gradient(90deg,#03a9f4,#f441a5,#ffeb3b,#03a9f3);
+            background-size: 400%;
+            border-radius: 50px;
+            filter: blur(20px);
+            z-index: -1;
+        }
+        a::before{
+            animation: sun 8s infinite;
+        }
+
+        a{
+            animation: sun 8s infinite;
+        }
+        @keyframes sun {
+            100%{
+                background-position: -400% 0;
+            }
+        }
+    </style>
+</html>
