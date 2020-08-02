@@ -1,0 +1,3 @@
+[0802/204418.579:ERROR:file_io_win.cc(179)] CreateFile C:\Users\wz\AppData\Local\Microsoft\Edge\User Data\Crashpad\settings.dat: 拒绝访问。 (0x5)
+[0802/204418.602:ERROR:registration_protocol_win.cc(131)] TransactNamedPipe: 管道已结束。 (0x6D)
+[0802/204418.604:ERROR:file_io_win.cc(179)] CreateFile C:\Users\wz\AppData\Local\Microsoft\Edge\User Data\Crashpad\settings.dat: 拒绝访问。 (0x5)
