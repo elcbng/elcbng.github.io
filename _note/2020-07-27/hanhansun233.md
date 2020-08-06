@@ -1,6 +1,7 @@
 ---
 layout: note
 title: maven、Mybatis、Spring入门学习
+author: hanhansun233
 category: 2020暑假第三周
 date: 2020-07-27
 ---
