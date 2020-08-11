@@ -1,10 +1,12 @@
-| layout | title    | author     | data   |
-| ------ | -------- | ---------- | ------ |
-| note   | security | jiaxuan.yu | 2020.8 |
+---
+layout: note
+title: Security
+category: 2020暑假第三周
+author: jiaxuan.yu
+date: 2020-08
+---
 
-[TOC]
-
-﻿﻿﻿﻿﻿﻿﻿﻿[网络安全](https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8)
+[网络安全](https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8)
 
 ### 网络安全：
 
