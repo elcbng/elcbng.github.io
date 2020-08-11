@@ -1,4 +1,10 @@
-# CAT暑假训练第二周周记
+---
+layout: note
+title: CAT暑假训练第二周周记
+author: Crebter
+category: 2020暑假第二周
+date: 2020-07-21
+---
 
 - ## 本周总结
 
