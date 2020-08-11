@@ -3,7 +3,7 @@ layout: note
 title: Security
 category: 2020暑假第三周
 author: jiaxuan.yu
-date: 2020-08
+date: 2020-08-01
 ---
 
 [网络安全](https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8)
