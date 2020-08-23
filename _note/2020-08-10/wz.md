@@ -2,7 +2,7 @@
 layout: note
 title: Tutorial
 category: 2020暑假第四周
-date: 2020-08-016
+date: 2020-08-16
 ---
 
 ## 学习内容：
