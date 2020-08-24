@@ -1,5 +1,6 @@
 ---
 layout: note
+auther: 吴文展
 title: 第六周学习笔记
 category: 2020暑假第六周
 date: 2020-08-23
