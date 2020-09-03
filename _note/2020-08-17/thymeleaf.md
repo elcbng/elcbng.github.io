@@ -1,9 +1,9 @@
 ---
 layout: note
-title: HTML、CSS、JavaScript的总结
+title: Thymeleaf的总结
 author: 陈继淼
 category: 2020暑假第六周
-date: 2020-08-16
+date: 2020-08-23
 ---
 
 

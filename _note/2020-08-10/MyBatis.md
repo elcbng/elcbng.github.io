@@ -1,9 +1,9 @@
 ---
 layout: note
-title: HTML、CSS、JavaScript的总结
+title: MyBatis的总结
 author: 陈继淼
 category: 2020暑假第五周
-date: 2020-08-09
+date: 2020-08-16
 ---
 
 
