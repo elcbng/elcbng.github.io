@@ -8,14 +8,15 @@ menu: 笔记
 permalink: /note/
 ---
 
-{% assign _sorted_note = site.note | sort: 'path' %}
+{% assign _sorted_note = site.note | sort: 'path' | reverse %}
 
 {%- for _article in _sorted_note -%}
 
 {% comment %} group by path {% endcomment %}
 {%- assign _current = _article.category -%}
 {%- if _current != _past -%}
-{%- unless forloop.first -%}</section>{%- endunless -%}
+{%- unless forloop.first -%}</section><hr/>{%- endunless -%}
+   
 <section>
 <span class="fa listing-seperator">
     <span>{{ _current }}</span>
@@ -23,13 +24,17 @@ permalink: /note/
 {%- assign _past = _current -%}
 {%- endif -%}
 
-{% if _article.title == "Tutorial" %}
-<div>{{ _article.excerpt }}                        
+{% if _article.title == "Tutorial" %}{% if _article.excerpt.size > 1 %}
+<div>     
+    <span class="post-title">
+    # Detial<br/>
+    </span>
+{{ _article.excerpt }}                        
 <a href="{{ _article.url | prepend: site.baseurl }}"><span class="tags tags-black">
     <span class="tag">View All</span>
 </span></a>
 </div>
-{% else %}
+{% endif %}{% else %}
 <div class="post-preview item">
     <a href="{{ _article.url | prepend: site.baseurl }}">
         <span class="post-title">
